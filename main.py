@@ -1,4 +1,6 @@
 import pandas as pd
+
+from ANN.ann import ANN
 from util.math_ops import bind_between_0_1
 
 
@@ -18,4 +20,6 @@ weights = [
     [[0.2, 0.3, 0.2],
      [0.1, 0.1, 0.1]],   [[0.5, 0.1]] ]
 
-print(input_data)
+"""Train Neural Network"""
+ann = ANN(learning_rate=0.5, weights=weights)
+ann.train(input_data, output_target)

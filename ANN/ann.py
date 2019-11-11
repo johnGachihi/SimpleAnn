@@ -39,7 +39,6 @@ class ANN:
                 if idx_1 > 0:
                     weight = self.weights[-1][0][idx_2]
                     output_error = output_error * weight * output * (1 - output)
-                    print('output_error', output_error)
 
                 for idx_3, w in enumerate(n):
                     print('for weight', weights_copy[-(idx_1+1)][idx_2][idx_3])
