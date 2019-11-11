@@ -23,3 +23,7 @@ weights = [
 """Train Neural Network"""
 ann = ANN(learning_rate=0.5, weights=weights)
 ann.train(input_data, output_target)
+
+"""Print Final Weights"""
+print("____________FINAL WEIGHTS____________:")
+print(ann.weights)
