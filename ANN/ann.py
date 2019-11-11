@@ -20,11 +20,9 @@ class ANN:
     def __feedfoward(self, input_data_row):
         outputs = input_data_row
         for w in self.weights:
-            # print(w, outputs)
             outputs = np.dot(w, outputs)
             self.outputs.append(outputs)
             outputs = [self.__sigmoid(x) for x in outputs]
-        # print('self.outputs', self.outputs)
         return outputs
 
     def __outputerror(self, modeloutput, actualoutput):
@@ -33,7 +31,6 @@ class ANN:
     def __adjust_weights(self, output_error):
         weights_copy = copy.deepcopy(self.weights)
         for idx_1, layer in enumerate(reversed(self.weights)):
-            # print('adj_weights', idx_1, layer)
             for idx_2, n in enumerate(layer):
                 output = self.outputs[-(idx_1 + 1)][idx_2]
                 if idx_1 > 0:
